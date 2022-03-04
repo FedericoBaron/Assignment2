@@ -1,4 +1,4 @@
-# Assignment2
+# Assignment 2
 
 ## Program 1: Minotaur’s Birthday Party (50 points)
 
