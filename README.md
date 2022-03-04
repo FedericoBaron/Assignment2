@@ -18,6 +18,12 @@ For the first program, in which we have the cupcake at the end of the labyrinth,
 
 ### Correctness, Efficiency and Evaluation:
 
+Correctness is ensured by using the counter to count how many guests have definitely visited the maze by looking at whether there's a cupcake or not. I also ensured correctness by testing the program and seeing that all the guests do get in the maze and that the counter is accurate. 
+
+The efficiency of the program is roughly N^2, N being the number of guests, since the counter will on average only be able to check once every N turns. 
+
+The program using locks was able bring the runtime down to 15 seconds from around 3 minutes when simply using Atomics and no locks. I used a ReentrantLock in order to ensure that the variables weren't accessed by many threads at the same time. 
+
 ### How to run
 
 To run the program download pa2cop4520p1v2.java and in your terminal CD into the directory that file resides in. Once there, write "javac pa2cop4520p1v2.java", followed by "java pa2cop4520p1v2". After that, the program will start running and will ask you how many guests are attending the Minatour's party. Input an integer, and the program will run accounting for that number of guests. The output will be written into the terminal and it will print "Party is over. Thank you for coming!" as well as the execution time. 
@@ -41,6 +47,12 @@ Implement the strategy/protocol of your choice where each guest is represented b
 For the second program, in which we are going to see the Minotaur's vase, we are using the third strategy of using a queue. I selected this strategy as it would allow the guests to line up and get their turn in a fair way. The first strategy of just letting the guests check if the room is available would probably make some guests frustrated as there's a chance they won't get to see the vase for a while. With the second strategy of having a "busy" or "available" sign is a little better than the first strategy as guests will know that the room is busy or available but it still might lead to some guests not getting to see the vase for a while if they happen to get unlucky and the room gets occupied before they get a chance to enter every time. The third approach of using the queue means guests will have to wait for their turn in a queue which is time consuming, but the benefit of knowing everyone will get their turn if they wait is more fair than that of the other approaches. 
 
 ### Correctness, Efficiency, and Evaluation
+
+The correctness of the program is ensured by using the queue to make sure that the guests enter if they're in front of the queue and by using an AtomicBoolean that checks if the room is available. 
+
+The efficiency of this program is roughly O(N), N being the number of guests since we just join a queue and go through it. However, the way the program is implemented is to run for x amount of seconds, x being the length of the party. So the program will always run for x amount of time. 
+
+The program is using a ArrayBlockingQueue is very efficient since this queue has a fixed size N, with N being the number of guests so that it never overflows but also doesn't need to adjust its size.
 
 ### How to run
 
