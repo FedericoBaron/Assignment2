@@ -13,7 +13,7 @@ For the first program, in which we have the cupcake at the end of the labyrinth,
 
 To run the program download pa2cop4520p1v2.java and in your terminal CD into the directory that file resides in. Once there, write "javac pa2cop4520p1v2.java", followed by "java pa2cop4520p1v2". After that, the program will start running and will ask you how many guests are attending the Minatour's party. Input an integer, and the program will run accounting for that number of guests. The output will be written into the terminal and it will print "Party is over. Thank you for coming!" as well as the execution time. 
 
-Program 2: 
+## Program 2: 
 
 ### Strategy
 
